@@ -21,7 +21,7 @@ fn main() {
 }
 
 fn handle_connection(mut stream: TcpStream) {
-    let mut buffer = [0; 1024];
+    let mut buffer = [0; 8192];
     stream.read(&mut buffer).unwrap();
 
     let request = String::from_utf8_lossy(&buffer);
